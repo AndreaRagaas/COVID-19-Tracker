@@ -8,3 +8,5 @@ class CovidContactTracingApp:
         self.window = tk.Tk()
         #Adjust the windows size
         self.window.geometry("400x400")
+        #Create a window title
+        self.window.title("Covid Contact Tracing App")
