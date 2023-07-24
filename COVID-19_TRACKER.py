@@ -45,6 +45,10 @@ class CovidContactTracingApp:
         personal_info_frame = ttk.Frame(self.personal_info_frame, borderwidth=2, relief=tk.GROOVE)
         personal_info_frame.pack(fill=tk.BOTH, padx=10, pady=10)
 
+        #Create the Personal Info tab's label
+        label_1 = tk.Button(personal_info_frame, text="Personal Information", bg="light blue", fg="black", font=("Times", 25))
+        label_1.grid(row=0, column=0, columnspan=2, padx=10, pady=10)
+
     def run(self):
         self.window.mainloop()
 
