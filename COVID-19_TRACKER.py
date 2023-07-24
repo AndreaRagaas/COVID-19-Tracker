@@ -149,6 +149,10 @@ class CovidContactTracingApp:
         self.relationship_entry = tk.Entry(emergency_frame, width=30)
         self.relationship_entry.grid(row=15, column=1, padx=10, pady=5)
 
+        #Adding a next button to proceed on the Health Questions tab
+        next_button = tk.Button(emergency_frame, text="Next", bg="light blue", fg="black", font=("Times", 14), command=self.show_questions_tab)
+        next_button.grid(row=16, column=0, columnspan=2, padx=10, pady=10)
+
 
     def run(self):
         self.window.mainloop()
