@@ -41,6 +41,9 @@ class CovidContactTracingApp:
 
 #Create the Personal Info tab
     def create_personal_info_tab(self):
+        #Styling the Personal Info tab's
+        personal_info_frame = ttk.Frame(self.personal_info_frame, borderwidth=2, relief=tk.GROOVE)
+        personal_info_frame.pack(fill=tk.BOTH, padx=10, pady=10)
 
     def run(self):
         self.window.mainloop()
