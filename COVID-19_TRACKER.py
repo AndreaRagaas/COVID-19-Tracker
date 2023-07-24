@@ -128,7 +128,14 @@ class CovidContactTracingApp:
         #Create a label and an entry widget for the emergency contact's name
         emergency_name_label = tk.Label(emergency_frame, text="NAME", fg="black", font=("Times", 14))
         emergency_name_label.grid(row=12, column=0, sticky=tk.W, padx=10, pady=5)
+        self.emergency_name_entry = tk.Entry(emergency_frame, width=30)
+        self.emergency_name_entry.grid(row=12, column=1, padx=10, pady=5)
 
+        #Create a label and an entry widget for the emergency contact's number
+        emergency_number_label = tk.Label(emergency_frame, text="PHONE NUMBER", fg="black", font=("Times", 14))
+        emergency_number_label.grid(row=13, column=0, sticky=tk.W, padx=10, pady=5)
+        self.emergency_number_entry = tk.Entry(emergency_frame, width=30)
+        self.emergency_number_entry.grid(row=13, column=1, padx=10, pady=5)
 
 
     def run(self):
