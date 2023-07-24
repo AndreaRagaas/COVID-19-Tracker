@@ -39,6 +39,9 @@ class CovidContactTracingApp:
         self.create_emergency_contact_tab()
         self.create_questions_tab()
 
+#Create the Personal Info tab
+    def create_personal_info_tab(self):
+
     def run(self):
         self.window.mainloop()
 
