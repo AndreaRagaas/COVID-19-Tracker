@@ -215,6 +215,10 @@ class CovidContactTracingApp:
         question3_options_dropdown = ttk.Combobox(questions_frame, textvariable=self.question3_options_var, values=question3_options_options, font=("Times", 10))
         question3_options_dropdown.grid(row=18, column=0, columnspan=2, padx=5, pady=2, sticky=tk.W)
 
+        #Question 4
+        question4_label = tk.Label(questions_frame, text="4. Have you had contact with somebody with symptoms in the past 7 days?", fg="black", font=("Times", 12))
+        question4_label.grid(row=19, column=0, sticky=tk.W, padx=10, pady=5)
+
 
 
     def run(self):
