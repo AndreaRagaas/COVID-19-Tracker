@@ -143,6 +143,12 @@ class CovidContactTracingApp:
         self.emergency_email_entry = tk.Entry(emergency_frame, width=30)
         self.emergency_email_entry.grid(row=14, column=1, padx=10, pady=5)
 
+        #Create a label and an entry widget for the emergency contact's relationship to the user
+        relationship_label = tk.Label(emergency_frame, text="RELATIONSHIP", fg="black", font=("Times", 14))
+        relationship_label.grid(row=15, column=0, sticky=tk.W, padx=10, pady=5)
+        self.relationship_entry = tk.Entry(emergency_frame, width=30)
+        self.relationship_entry.grid(row=15, column=1, padx=10, pady=5)
+
 
     def run(self):
         self.window.mainloop()
