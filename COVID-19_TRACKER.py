@@ -1,5 +1,7 @@
 #Import Tkinter 
 import tkinter as tk
+#Import messagebox
+from tkinter import messagebox
 
 #Create the Application's class
 class CovidContactTracingApp:
