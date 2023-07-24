@@ -125,6 +125,11 @@ class CovidContactTracingApp:
         label_2 = tk.Button(emergency_frame, text="Emergency Contact", bg="light blue", fg="black", font=("Times", 25))
         label_2.grid(row=11, column=0, columnspan=2, padx=10, pady=10)
 
+        #Create a label and an entry widget for the emergency contact's name
+        emergency_name_label = tk.Label(emergency_frame, text="NAME", fg="black", font=("Times", 14))
+        emergency_name_label.grid(row=12, column=0, sticky=tk.W, padx=10, pady=5)
+
+
 
     def run(self):
         self.window.mainloop()
