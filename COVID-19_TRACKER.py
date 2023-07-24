@@ -121,6 +121,11 @@ class CovidContactTracingApp:
         emergency_frame = ttk.Frame(self.emergency_frame, borderwidth=2, relief=tk.GROOVE)
         emergency_frame.pack(fill=tk.BOTH, padx=10, pady=10)
 
+        #Create the Emergency Contact tab's label
+        label_2 = tk.Button(emergency_frame, text="Emergency Contact", bg="light blue", fg="black", font=("Times", 25))
+        label_2.grid(row=11, column=0, columnspan=2, padx=10, pady=10)
+
+
     def run(self):
         self.window.mainloop()
 
