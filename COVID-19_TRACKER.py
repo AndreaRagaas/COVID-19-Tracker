@@ -49,6 +49,12 @@ class CovidContactTracingApp:
         label_1 = tk.Button(personal_info_frame, text="Personal Information", bg="light blue", fg="black", font=("Times", 25))
         label_1.grid(row=0, column=0, columnspan=2, padx=10, pady=10)
 
+        #Create a label and an entry widget for the user's first name
+        first_name_label = tk.Label(personal_info_frame, text="FIRST NAME", fg="black", font=("Times", 14))
+        first_name_label.grid(row=1, column=0, sticky=tk.W, padx=10, pady=5)
+        self.first_name_entry = tk.Entry(personal_info_frame, width=30)
+        self.first_name_entry.grid(row=1, column=1, padx=10, pady=5)
+
     def run(self):
         self.window.mainloop()
 
