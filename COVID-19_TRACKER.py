@@ -67,6 +67,13 @@ class CovidContactTracingApp:
         self.email_entry = tk.Entry(personal_info_frame, width=30)
         self.email_entry.grid(row=3, column=1, padx=10, pady=5)
 
+        #Create a label and an entry widget for the user's phone number
+        number_label = tk.Label(personal_info_frame, text="PHONE NUMBER", fg="black", font=("Times", 14))
+        number_label.grid(row=4, column=0, sticky=tk.W, padx=10, pady=5)
+
+        self.number_entry = tk.Entry(personal_info_frame, width=30)
+        self.number_entry.grid(row=4, column=1, padx=10, pady=5)
+
     def run(self):
         self.window.mainloop()
 
