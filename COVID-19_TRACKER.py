@@ -159,6 +159,10 @@ class CovidContactTracingApp:
         questions_frame = ttk.Frame(self.questions_frame,borderwidth=2, relief=tk.GROOVE)
         questions_frame.pack(fill=tk.BOTH, padx=10, pady=10)
 
+        #Create the Health Questions tab's label
+        label_3 = tk.Button(questions_frame, text="Health Questions", bg="light blue", fg="black", font=("Times", 18))
+        label_3.grid(row=0, column=0, columnspan=2, padx=5, pady=5)
+
 
     def run(self):
         self.window.mainloop()
