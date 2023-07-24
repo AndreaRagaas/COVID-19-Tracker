@@ -14,3 +14,9 @@ class CovidContactTracingApp:
         self.window.title("Covid Contact Tracing App")
         #Change the windows background color
         self.window.configure(background="light blue")        
+
+        #Getting the consent of the user first if they will allow to share their personal informations
+        consent = messagebox.askyesno("Consent Required", "By proceeding, you consent to provide your personal information for COVID-19 contact tracing. Do you agree?")
+        if not consent:
+            # If the user declines consent, exit the application
+            return
