@@ -154,6 +154,9 @@ class CovidContactTracingApp:
         next_button.grid(row=16, column=0, columnspan=2, padx=10, pady=10)
 
     #Create the Health Questions tab
+    def show_questions_tab(self):
+        self.notebook.select(self.questions_frame)
+
     def create_questions_tab(self):
         #Styling the Health Questions tab
         questions_frame = ttk.Frame(self.questions_frame,borderwidth=2, relief=tk.GROOVE)
@@ -243,6 +246,9 @@ class CovidContactTracingApp:
         question5_dropdown = ttk.Combobox(questions_frame, textvariable=self.question5_var, values=question5_options, font=("Times", 10))
         question5_dropdown.grid(row=22, column=0, columnspan=2, padx=5, pady=2, sticky=tk.W)
 
+        #Adding a Submit button to submit all informations
+        submit_button = tk.Button(questions_frame, text="Submit", bg="light blue", fg="black", font=("Times", 14), command=self.submit_info)
+        submit_button.grid(row=23, column=0, columnspan=2, padx=10, pady=10)
 
 
     def run(self):
