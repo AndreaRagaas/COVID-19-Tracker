@@ -116,6 +116,11 @@ class CovidContactTracingApp:
     def show_create_emergency_contact_tab(self):
         self.notebook.select(self.emergency_frame)
 
+    #Styling the Emergency Contact tab
+    def create_emergency_contact_tab(self):
+        emergency_frame = ttk.Frame(self.emergency_frame, borderwidth=2, relief=tk.GROOVE)
+        emergency_frame.pack(fill=tk.BOTH, padx=10, pady=10)
+
     def run(self):
         self.window.mainloop()
 
