@@ -137,6 +137,12 @@ class CovidContactTracingApp:
         self.emergency_number_entry = tk.Entry(emergency_frame, width=30)
         self.emergency_number_entry.grid(row=13, column=1, padx=10, pady=5)
 
+        #Create a label and an entry widget for the emergency contact's email
+        emergency_email_label = tk.Label(emergency_frame, text="EMAIL", fg="black", font=("Times", 14))
+        emergency_email_label.grid(row=14, column=0, sticky=tk.W, padx=10, pady=5)
+        self.emergency_email_entry = tk.Entry(emergency_frame, width=30)
+        self.emergency_email_entry.grid(row=14, column=1, padx=10, pady=5)
+
 
     def run(self):
         self.window.mainloop()
