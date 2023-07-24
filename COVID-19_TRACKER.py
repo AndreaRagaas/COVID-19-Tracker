@@ -163,6 +163,10 @@ class CovidContactTracingApp:
         label_3 = tk.Button(questions_frame, text="Health Questions", bg="light blue", fg="black", font=("Times", 18))
         label_3.grid(row=0, column=0, columnspan=2, padx=5, pady=5)
 
+        #Question 1
+        q1_label = tk.Label(questions_frame, text="1. Have you been vaccinated for COVID-19?", fg="black", font=("Times", 12))
+        q1_label.grid(row=1, column=0, sticky=tk.W, padx=10, pady=5)
+
 
     def run(self):
         self.window.mainloop()
