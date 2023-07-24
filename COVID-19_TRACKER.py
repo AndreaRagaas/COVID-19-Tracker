@@ -215,7 +215,7 @@ class CovidContactTracingApp:
         ]
         self.question3_options_var = tk.StringVar()
         self.question3_options_var.set("No")
-        question3_options_dropdown = ttk.Combobox(questions_frame, textvariable=self.question3_options_var, values=question3_options_options, font=("Times", 10))
+        question3_options_dropdown = ttk.Combobox(questions_frame, textvariable=self.question3_options_var, values=question3_options, font=("Times", 10))
         question3_options_dropdown.grid(row=18, column=0, columnspan=2, padx=5, pady=2, sticky=tk.W)
 
         #Question 4
