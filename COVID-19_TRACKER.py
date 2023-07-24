@@ -10,3 +10,5 @@ class CovidContactTracingApp:
         self.window.geometry("400x400")
         #Create a window title
         self.window.title("Covid Contact Tracing App")
+        #Change the windows background color
+        self.window.configure(background="light blue")        
