@@ -201,6 +201,9 @@ class CovidContactTracingApp:
         for i, option in enumerate(question2_options):
             tk.Checkbutton(questions_frame, text=option, variable=self.question2_vars[i], font=("Times", 10)).grid(row=4 + i, column=0, columnspan=2, padx=5, pady=2, sticky=tk.W)
 
+        #Question 3
+        question3_label = tk.Label(questions_frame, text="3. Have you had exposure to a probable or confirmed case in the last 14 days?", fg="black", font=("Times", 12))
+        question3_label.grid(row=17, column=0, sticky=tk.W, padx=10, pady=5)
 
 
     def run(self):
