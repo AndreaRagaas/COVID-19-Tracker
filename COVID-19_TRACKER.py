@@ -182,7 +182,26 @@ class CovidContactTracingApp:
         #Question 2
         question2_label = tk.Label(questions_frame, text="2. Are you experiencing any symptoms in the past 7 days such as:", fg="black", font=("Times", 12))
         question2_label.grid(row=3, column=0, columnspan=2, sticky=tk.W, padx=10, pady=5)
-        
+        #Options for Question 2
+        question2_options = [
+            "Fever",
+            "Cough",
+            "Colds",
+            "Muscle/body pains",
+            "Sore throat",
+            "Diarrhea",
+            "Headache",
+            "Shortness of breath",
+            "Difficulty of breathing",
+            "Loss of taste",
+            "Loss of smell",
+            "None of the above"
+        ]
+        self.question2_vars = [tk.IntVar() for _ in range(len(question2_options))]
+        for i, option in enumerate(question2_options):
+            tk.Checkbutton(questions_frame, text=option, variable=self.question2_vars[i], font=("Times", 10)).grid(row=4 + i, column=0, columnspan=2, padx=5, pady=2, sticky=tk.W)
+
+
 
     def run(self):
         self.window.mainloop()
