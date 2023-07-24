@@ -213,9 +213,9 @@ class CovidContactTracingApp:
             "No",
             "Uncertain"
         ]
-        self.question3_options_var = tk.StringVar()
-        self.question3_options_var.set("No")
-        question3_options_dropdown = ttk.Combobox(questions_frame, textvariable=self.question3_options_var, values=question3_options, font=("Times", 10))
+        self.question3_var = tk.StringVar()
+        self.question3_var.set("No")
+        question3_options_dropdown = ttk.Combobox(questions_frame, textvariable=self.question3_var, values=question3_options, font=("Times", 10))
         question3_options_dropdown.grid(row=18, column=0, columnspan=2, padx=5, pady=2, sticky=tk.W)
 
         #Question 4
@@ -249,6 +249,47 @@ class CovidContactTracingApp:
         #Adding a Submit button to submit all informations
         submit_button = tk.Button(questions_frame, text="Submit", bg="light blue", fg="black", font=("Times", 14), command=self.submit_info)
         submit_button.grid(row=23, column=0, columnspan=2, padx=10, pady=10)
+
+    #The information section
+    def submit_info(self):
+        personal_info = {
+            "First Name": self.first_name_entry.get(),
+            "Last Name": self.last_name_entry.get(),
+            "Email": self.email_entry.get(),
+            "Phone Number": self.number_entry.get(),
+            "Street Address": self.address1_label.get(),
+            "Street Address Line 2": self.address2_label.get(),
+            "City": self.address3_label.get(),
+            "State/Province": self.address4_label.get(),
+            "Postal/Zipcode": self.address5_label.get(),
+        }
+
+        emergency_contact = {
+            "Name": self.emergency_name_entry.get(),
+            "Phone Number": self.emergency_number_entry.get(),
+            "Email": self.emergency_email_entry.get(),
+            "Relationship": self.relationship_entry.get(),
+        }
+
+        health_questions = {
+            "Vaccination Status": self.question1_var.get(),
+            "Symptoms": [option for i, option in enumerate([
+                "Fever", "Cough", "Colds", "Muscle/body pains", "Sore throat",
+                "Diarrhea", "Headache", "Shortness of breath", "Difficulty of breathing",
+                "Loss of taste", "Loss of smell", "None of the above"
+            ]) if self.question2_vars[i].get()],
+            "Exposure to Confirmed Case": self.question3_var.get(),
+            "Contact with Symptomatic Individual": self.question4_var.get(),
+            "Covid-19 Testing": self.question5_var.get(),
+        }
+
+        # Combine all information
+        all_info = {
+            "Personal Information": personal_info,
+            "Emergency Contact": emergency_contact,
+            "Health Questions": health_questions,
+        }
+
 
 
     def run(self):
