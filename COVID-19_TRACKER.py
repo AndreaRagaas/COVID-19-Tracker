@@ -108,6 +108,10 @@ class CovidContactTracingApp:
         self.address5_label = tk.Entry(personal_info_frame, width=30)
         self.address5_label.grid(row=9, column=1, padx=10, pady=5)
 
+        #Adding a next button to proceed on the Emergency Contact tab
+        next_button = tk.Button(personal_info_frame, text="Next", bg="light blue", fg="black", font=("Times", 14), command=self.show_create_emergency_contact_tab)
+        next_button.grid(row=17, column=0, columnspan=2, padx=10, pady=10)
+
     def run(self):
         self.window.mainloop()
 
