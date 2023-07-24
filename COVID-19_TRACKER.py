@@ -153,6 +153,12 @@ class CovidContactTracingApp:
         next_button = tk.Button(emergency_frame, text="Next", bg="light blue", fg="black", font=("Times", 14), command=self.show_questions_tab)
         next_button.grid(row=16, column=0, columnspan=2, padx=10, pady=10)
 
+    #Create the Health Questions tab
+    def create_questions_tab(self):
+        #Styling the Health Questions tab
+        questions_frame = ttk.Frame(self.questions_frame,borderwidth=2, relief=tk.GROOVE)
+        questions_frame.pack(fill=tk.BOTH, padx=10, pady=10)
+
 
     def run(self):
         self.window.mainloop()
