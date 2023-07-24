@@ -290,6 +290,19 @@ class CovidContactTracingApp:
             "Health Questions": health_questions,
         }
 
+        #Message box to show all of the information being provided by the user
+        message = "Thank you for submitting your information.\n\n"
+        for section, data in all_info.items():
+            message += f"{section}:\n"
+            for key, value in data.items():
+                message += f"{key}: {value}\n"
+            message += "\n"
+
+        # Include the privacy message in the message box
+        message += "\nPrivacy Message:\n"
+        message += "Your privacy is important to us. All the information shared for COVID-19 contact tracing will remain confidential and will be used solely for public health purposes."
+        
+        messagebox.showinfo("Your response has been submitted!", message)
 
 
     def run(self):
