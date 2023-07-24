@@ -74,6 +74,40 @@ class CovidContactTracingApp:
         self.number_entry = tk.Entry(personal_info_frame, width=30)
         self.number_entry.grid(row=4, column=1, padx=10, pady=5)
 
+        #Create a label and an entry widget for the user's address
+        address_label = tk.Label(personal_info_frame, text="ADDRESS", fg="black", font=("Times", 14))
+        address_label.grid(row=5, column=0, sticky=tk.W, padx=10, pady=5)
+
+        address1_label = tk.Label(personal_info_frame, text="STREET ADDRESS", fg="black", font=("Times", 11))
+        address1_label.grid(row=6, column=1, sticky=tk.N, padx=10, pady=5)
+
+        self.address1_label = tk.Entry(personal_info_frame, width=30)
+        self.address1_label.grid(row=5, column=1, padx=10, pady=5)
+
+        address2_label = tk.Label(personal_info_frame, text="STREET ADDRESS LINE 2", fg="black", font=("Times", 11))
+        address2_label.grid(row=8, column=0, sticky=tk.N, padx=10, pady=5)
+
+        self.address2_label = tk.Entry(personal_info_frame, width=30)
+        self.address2_label.grid(row=7, column=0, padx=10, pady=5)
+
+        address3_label = tk.Label(personal_info_frame, text="CITY", fg="black", font=("Times", 11))
+        address3_label.grid(row=8, column=1, sticky=tk.N, padx=10, pady=5)
+
+        self.address3_label = tk.Entry(personal_info_frame, width=30)
+        self.address3_label.grid(row=7, column=1, padx=10, pady=5)
+
+        address4_label = tk.Label(personal_info_frame, text="STATE/PROVINCE", fg="black", font=("Times", 11))
+        address4_label.grid(row=10, column=0, sticky=tk.N, padx=10, pady=5)
+
+        self.address4_label = tk.Entry(personal_info_frame, width=30)
+        self.address4_label.grid(row=9, column=0, padx=10, pady=5)
+        
+        address5_label = tk.Label(personal_info_frame, text="POSTAL/ZIPCODE", fg="black", font=("Times", 11))
+        address5_label.grid(row=10, column=1, sticky=tk.N, padx=10, pady=5)
+
+        self.address5_label = tk.Entry(personal_info_frame, width=30)
+        self.address5_label.grid(row=9, column=1, padx=10, pady=5)
+
     def run(self):
         self.window.mainloop()
 
