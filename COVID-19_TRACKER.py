@@ -112,6 +112,10 @@ class CovidContactTracingApp:
         next_button = tk.Button(personal_info_frame, text="Next", bg="light blue", fg="black", font=("Times", 14), command=self.show_create_emergency_contact_tab)
         next_button.grid(row=17, column=0, columnspan=2, padx=10, pady=10)
 
+    #Create the Emergency Contact tab
+    def show_create_emergency_contact_tab(self):
+        self.notebook.select(self.emergency_frame)
+
     def run(self):
         self.window.mainloop()
 
