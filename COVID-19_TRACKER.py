@@ -164,8 +164,20 @@ class CovidContactTracingApp:
         label_3.grid(row=0, column=0, columnspan=2, padx=5, pady=5)
 
         #Question 1
-        q1_label = tk.Label(questions_frame, text="1. Have you been vaccinated for COVID-19?", fg="black", font=("Times", 12))
-        q1_label.grid(row=1, column=0, sticky=tk.W, padx=10, pady=5)
+        question1_label = tk.Label(questions_frame, text="1. Have you been vaccinated for COVID-19?", fg="black", font=("Times", 12))
+        question1_label.grid(row=1, column=0, sticky=tk.W, padx=10, pady=5)
+        #Options for Question 1
+        question1_options = [
+            "Not Yet",
+            "1st Dose",
+            "2nd Dose (Fully Vaccinated)",
+            "1st Booster Shot",
+            "2nd Booster Shot"
+        ]
+        self.question1_var = tk.StringVar()
+        self.question1_var.set("Not Yet")
+        question1_dropdown = ttk.Combobox(questions_frame, textvariable=self.question1_var, values=question1_options, font=("Times", 10))
+        question1_dropdown.grid(row=2, column=0, columnspan=2, padx=5, pady=2, sticky=tk.W)
 
 
     def run(self):
