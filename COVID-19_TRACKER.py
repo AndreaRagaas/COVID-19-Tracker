@@ -7,6 +7,8 @@ from tkinter import ttk
 #Import reportlab to create the PDF
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
+#Import qrcode to generate QR
+import qrcode
 
 #Create the Application's class
 class CovidContactTracingApp:
