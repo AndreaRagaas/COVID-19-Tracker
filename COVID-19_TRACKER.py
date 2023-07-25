@@ -307,6 +307,44 @@ class CovidContactTracingApp:
         
         messagebox.showinfo("Your response has been submitted!", message)
 
+    #To generate PDF file copy with all of the information given by the user
+    def create_pdf(self, data):
+        canva = canvas.Canvas("covid_contact_tracing_data.pdf", pagesize=letter)
+        canva.setFont("Helvetica", 11)
+
+        # Calculate the middle of the page
+        middle_x = letter[0] / 2
+        top_margin_y = letter[1] - 36  # A little below the top margin (36 points)
+
+        # Include the "Message Covid-19 Tracker" at the middle top
+        canva.setFont("Helvetica-Bold", 20)
+        canva.drawCentredString(middle_x, top_margin_y, "COVID CONTACT TRACING")
+
+        current_y = top_margin_y - 40  # Adjust the current y-coordinate to move down after writing the header
+
+        for section, section_data in data.items(): 
+            canva.setFont("Helvetica-Bold", 14)
+            canva.drawString(50, current_y, section)
+            current_y -= 20
+            for key, value in section_data.items():
+                canva.setFont("Helvetica", 12)
+                canva.drawString(50, current_y, f"{key}: {value}")
+                current_y -= 20
+            current_y -= 10
+
+        # Include the privacy message in the PDF
+        canva.setFont("Helvetica-Bold", 12)
+        canva.drawString(50, current_y - 30, "Privacy Message")
+        canva.setFont("Helvetica", 10)
+        canva.drawString(50, current_y - 50, "Your privacy is important to us.All the information shared for COVID-19 contact tracing will remain")
+        canva.setFont("Helvetica", 10)
+        canva.drawString(50, current_y - 70, "confidential and will be used solely for public health purposes.")
+        canva.setFont("Helvetica-Bold", 12)
+        canva.drawString(50, current_y - 100, "Thank you for submitting your information.")
+
+        canva.save()
+
+
 
     def run(self):
         self.window.mainloop()
