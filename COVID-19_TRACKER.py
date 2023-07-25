@@ -349,7 +349,7 @@ class CovidContactTracingApp:
         canva.drawString(50, current_y - 100, "Thank you for submitting your information.")
 
         canva.save()
-
+    #To generate QR Code of the text file copy with all of the information given by the user
     def generate_qr_code(self, data):
         qr = qrcode.QRCode(
             version=1,
