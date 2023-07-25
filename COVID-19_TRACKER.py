@@ -4,6 +4,9 @@ import tkinter as tk
 from tkinter import messagebox
 #Import ttk to style the application
 from tkinter import ttk
+#Import reportlab to create the PDF
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
 
 #Create the Application's class
 class CovidContactTracingApp:
