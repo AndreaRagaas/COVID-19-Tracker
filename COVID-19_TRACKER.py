@@ -309,6 +309,10 @@ class CovidContactTracingApp:
         
         messagebox.showinfo("Your response has been submitted!", message)
 
+        # Generate PDF and QR code
+        self.create_pdf(all_info)
+        self.generate_qr_code(message)
+
     #To generate PDF file copy with all of the information given by the user
     def create_pdf(self, data):
         canva = canvas.Canvas("covid_contact_tracing_data.pdf", pagesize=letter)
@@ -346,6 +350,18 @@ class CovidContactTracingApp:
 
         canva.save()
 
+    def generate_qr_code(self, data):
+        qr = qrcode.QRCode(
+            version=1,
+            error_correction=qrcode.constants.ERROR_CORRECT_L,
+            box_size=10,
+            border=4,
+        )
+        qr.add_data(data)
+        qr.make(fit=True)
+
+        img = qr.make_image(fill_color="black", back_color="white")
+        img.save("covid_contact_tracing_qr.png")
 
 
     def run(self):
